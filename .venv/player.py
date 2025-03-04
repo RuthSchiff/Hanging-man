@@ -41,14 +41,6 @@ class Player:
         if word not in self.words:
             self.words.append(word)
 
-
-    # def get_history(self):
-    #     return {
-    #         "count_games" : self.count_games,
-    #         "count_winner" : self.count_winner,
-    #         "words" : self.words
-    #     }
-
     def get_history(self):
         response = requests.post(f"{basic_url}/get_history", json={"name": self.name, "password": self.password})
         print(response.json())
